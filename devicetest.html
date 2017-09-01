@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+  <title>DeviceOrientationEvent</title>
+  <script language="javascript" type="text/javascript">
+   if(window.DeviceOrientationEvent){
+       window.addEventListener('deviceorientation',DeviceOrientationHandler,false);
+   }else{
+      alert("您的浏览器不支持DeviceOrientation");
+   }
+   //事件处理逻辑
+   function DeviceOrientationHandler(event){
+      document.getElementById("alpha").innerHTML = event.alpha;
+      document.getElementById("beta").innerHTML = event.beta;
+      document.getElementById("gamma").innerHTML = event.gamma;
+      document.getElementById("heading").innerHTML = event.webkitCompassHeading;
+      document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
+   }
+  </script>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <p>左右：<span id="alpha">0</span></p>
+  <p>前后：<span id="beta">0</span></p>
+  <p>扭转：<span id="gamma">0</span></p>
+  <p>指北针指向：<span id="heading">0</span>度</p>
+  <p>指北针精度：<span id="accuracy">0</span>度</p>
+</body>
+</html>
