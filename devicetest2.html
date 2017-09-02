@@ -2,23 +2,20 @@
 <head>
   <title>DeviceOrientationEvent</title>
   <script language="javascript" type="text/javascript">
-	navigator.geolocation.getCurrentPosition(on_success, on_error, options);
-	function on_success(pos) {
-	    // 将会获得以下信息
-	    var latitude = pos.coords.latitude;
-	    var longitude = pos.coords.longitude;
-	    var accuracy = pos.coords.accuracy;
-	    var timestamp = pos.timestamp;
-	    // 以下信息不一定提供，和具体设备有关
-	    var altitude = pos.coords.altitude;
-	    var altitudeAccuracy = pos.coords.altitudeAccuracy;
-	    var heading = pos.coords.heading;
-	    var speed = pos.coords.speed;
-	      document.getElementById("alpha").innerHTML = latitude;
-	      document.getElementById("beta").innerHTML = longitude;
-	      document.getElementById("gamma").innerHTML = accuracy;
-	}
-
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+	      document.getElementById("alpha").innerHTML = position.coords.latitude;
+	      document.getElementById("beta").innerHTML = position.coords.longitude;
+	      document.getElementById("gamma").innerHTML = position.coords.accuracy;
+  }
   </script>
   <meta charset="UTF-8" />
 </head>
