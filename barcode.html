@@ -3,48 +3,29 @@
 <head>
 <meta charset="utf-8">
 <title>Barcode Example</title>
-<script type="text/javascript" >
-// À©Õ¹API¼ÓÔØÍê±Ïºóµ÷ÓÃonPlusReady»Øµ÷º¯Êı
-document.addEventListener( "plusready", onPlusReady, false );
-// À©Õ¹API¼ÓÔØÍê±Ï£¬ÏÖÔÚ¿ÉÒÔÕı³£µ÷ÓÃÀ©Õ¹API
-function onPlusReady() {
-  var e = document.getElementById("scan");
-  e.removeAttribute( "disabled" );
-}
-// ´ÓÍ¼Æ¬ÖĞÉ¨Ãè
-function scanImg() {
-plus.barcode.scan( '_www/barcode.png', function (type,result) {
-alert( "Scan success:("+type+")"+result );
-}, function (error) {
-alert( error.message );
-} );
-}
-</script>
-
-
 <script type="text/javascript" >  
-    //ÓÃ·¨: HTML5+µÄplus¶ÔÏó,±ØĞëÓÉclickÊÂ¼ş´¥·¢ºó,²ÅÄÜÔÚÆÕÍ¨ÍøÒ³ÖĞÊ¹ÓÃ.ËùÒÔÔÚÃ»ÓĞclickµÄÇé¿öÏÂ,µ÷ÓÃ±¾ÎÄ¼ş¿ÉÒÔ½â¾öÎÊÌâ!  
-    //ÔÚ´úÂëÖĞÊ¹ÓÃ: plusObj , µÈÍ¬ÓÚplus  
-    //±íµ¥Òş²ØÖµ: plusok , ÊÇ·ñ´æÔÚplus¶ÔÏó  
-    //¼ì²éplusÊÇ·ñ¾ÍĞ÷: checkPlus º¯Êı  
-    //µ«ÊÇ,APP´ò°üºó°²×°,²¢Î´³öÏÖplus¶ÔÏó»ñÈ¡ÑÓ³ÙµÄÇé¿ö,ËùÒÔ²»±ØÓÃµ½±¾´úÂë  
+    //ç”¨æ³•: HTML5+çš„pluså¯¹è±¡,å¿…é¡»ç”±clickäº‹ä»¶è§¦å‘å,æ‰èƒ½åœ¨æ™®é€šç½‘é¡µä¸­ä½¿ç”¨.æ‰€ä»¥åœ¨æ²¡æœ‰clickçš„æƒ…å†µä¸‹,è°ƒç”¨æœ¬æ–‡ä»¶å¯ä»¥è§£å†³é—®é¢˜!  
+    //åœ¨ä»£ç ä¸­ä½¿ç”¨: plusObj , ç­‰åŒäºplus  
+    //è¡¨å•éšè—å€¼: plusok , æ˜¯å¦å­˜åœ¨pluså¯¹è±¡  
+    //æ£€æŸ¥plusæ˜¯å¦å°±ç»ª: checkPlus å‡½æ•°  
+    //ä½†æ˜¯,APPæ‰“åŒ…åå®‰è£…,å¹¶æœªå‡ºç°pluså¯¹è±¡è·å–å»¶è¿Ÿçš„æƒ…å†µ,æ‰€ä»¥ä¸å¿…ç”¨åˆ°æœ¬ä»£ç   
     document  
             .write('<b onclick="getPlusObj()" id="plusobj" style="display:none;"></b>\  
         <input type="hidden" name="plusok" id="plusok" value="">\  
         <div id="plustip" style="display:none;position:fixed;bottom:3px;right:3px;padding:2px 8px;z-index:9999;\  
-        border-radius:5px;background:#000;color:#fff;font-size:12px;">APP¾ÍĞ÷ÖĞ..</div>');  
+        border-radius:5px;background:#000;color:#fff;font-size:12px;">APPå°±ç»ªä¸­..</div>');  
     window.plusObj = null, window.plustip = document.getElementById('plustip');  
     ;  
     window.getPlusObj = function() {  
         if (plus) {  
-            plustip.innerHTML = 'ÒÑ¾ÍĞ÷!';  
+            plustip.innerHTML = 'å·²å°±ç»ª!';  
             setTimeout(function() {  
                 plustip.style.display = 'none';  
             }, 500);  
             document.getElementById('plusok').value = 1;  
             plusObj = plus;  
         } else {  
-            plustip.innerHTML = 'Ã»ÓĞAPP.PLUS¶ÔÏó';  
+            plustip.innerHTML = 'æ²¡æœ‰APP.PLUSå¯¹è±¡';  
         }  
     }  
     window.checkPlus = function() {  
@@ -77,6 +58,6 @@ height: 100%;
 </style>
 </head>
 <body >
-<input id="scan" type='button' disabled="disabled" onclick='scanImg()' value='É¨ÃèÍ¼Æ¬'></input>
+<input id="scan" type='button' disabled="disabled" onclick='scanImg()' value='æ‰«æå›¾ç‰‡'></input>
 </body>
 </html>
