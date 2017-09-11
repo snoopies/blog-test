@@ -22,7 +22,7 @@ height: 100%;
     //表单隐藏值: plusok , 是否存在plus对象  
     //检查plus是否就绪: checkPlus 函数  
     //但是,APP打包后安装,并未出现plus对象获取延迟的情况,所以不必用到本代码  
-    document.write('<b onclick="getPlusObj()" id="plusobj" style="display:none;">aaaaaa</b><input type="hidden" name="plusok" id="plusok" value=""><div id="plustip" style="display:none;position:fixed;bottom:3px;right:3px;padding:2px 8px;z-index:9999;border-radius:5px;background:#000;color:#fff;font-size:12px;">APP就绪中..</div>');  
+    document.write('<b onclick="getPlusObj()" id="plusobj" style="">aaaaaa</b><input  name="plusok" id="plusok" value=""><div id="plustip" style="display:none;position:fixed;bottom:3px;right:3px;padding:2px 8px;z-index:9999;border-radius:5px;background:#000;color:#fff;font-size:12px;">APP就绪中..</div>');  
     window.plusObj = null, window.plustip = document.getElementById('plustip');  
     ;  
     window.getPlusObj = function() {  
