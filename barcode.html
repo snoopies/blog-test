@@ -1,55 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Barcode Example</title>
-<style type="text/css">
-*{
--webkit-user-select: none;
-}
-html,body{
-margin: 0px;
-padding: 0px;
-height: 100%;
-}
-</style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Accelerometer Example</title>
+<script type="text/javascript">
+// ����plusready�¼�  
+document.addEventListener( "plusready", function(){
+// ��չAPI������ϣ����ڿ�������������չAPI
+plus.accelerometer.getCurrentAcceleration( function( a ) {
+alert( "Acceleration\nx:" + a.xAxis + "\ny:" + a.yAxis + "\nz:" + a.zAxis );
+} );
+}, false );
+</script>
 </head>
-<body >
-<input id="scan" type='button' disabled="disabled" onclick='scanImg()' value='..扫描图片..'></input>
-<script type="text/javascript" >  
-    //用法: HTML5+的plus对象,必须由click事件触发后,才能在普通网页中使用.所以在没有click的情况下,调用本文件可以解决问题!  
-    //在代码中使用: plusObj , 等同于plus  
-    //表单隐藏值: plusok , 是否存在plus对象  
-    //检查plus是否就绪: checkPlus 函数  
-    //但是,APP打包后安装,并未出现plus对象获取延迟的情况,所以不必用到本代码  
-    document.write('<b onclick="getPlusObj()" id="plusobj" style="">aaaaaa</b><input  name="plusok" id="plusok" value=""><div id="plustip" style="position:fixed;bottom:3px;right:3px;padding:2px 8px;z-index:9999;border-radius:5px;background:#000;color:#fff;font-size:12px;">APP就绪中..</div>');  
-    window.plusObj = null, window.plustip = document.getElementById('plustip');  
-    ;  
-    window.getPlusObj = function() {  
-        alert(plus.barcode.EAN8);
-        if (plus) {  
-            plustip.innerHTML = '已就绪!';  
-            setTimeout(function() {  
-                plustip.style.display = 'none';  
-            }, 500);  
-            document.getElementById('plusok').value = 1;  
-            plusObj = plus;  
-        } else {  
-            plustip.innerHTML = '没有APP.PLUS对象';  
-        }  
-    }  
-    window.checkPlus = function() {  
-        if (!plusObj) {  
-            plustip.style.display = 'block';  
-            return false;  
-        }  
-    }  
-    setTimeout(function() {  
-        document.getElementById('plusobj').click();  
-    }, 500);  
-</script>  
-
-
+<body>
 </body>
-
 </html>
